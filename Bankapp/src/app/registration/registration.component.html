@@ -1,0 +1,35 @@
+
+<body><form [formGroup]="registrationForm" class="form" (ngSubmit)="Register()">
+<div class="container">
+
+
+    <div class="main">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8"><h1>Registration Form</h1></div>
+            <div class="col-2"></div>
+        </div>
+        <div class="reg">
+        <div class="mb-3">
+            <label for="acc" class="acc" >Account Number:</label>
+            <input type="text" formControlName="acc" name="acc" id="acc">
+            <div *ngIf="(this.registrationForm.get('acc')?.touched||this.registrationForm.get('acc')?.dirty)&&this.registrationForm.get('acc')?.errors" class="error" >Invalid Account Number</div>
+           
+                </div>
+        <div class="mb-3">
+            <label for="uname" class="uname" >UserName:</label>
+            <input type="text" formControlName="uname" name="uname" id="uname">
+            <div *ngIf="(this.registrationForm.get('uname')?.touched||this.registrationForm.get('uname')?.dirty)&&this.registrationForm.get('uname')?.errors" class="error" >Invalid Username</div>
+        </div>
+        <div class="mb-3">
+            <label for="pwd" class="pwd" >Password:</label>
+            <input type="password" formControlName="pwd" name="pwd" id="pwd">
+        </div>
+    
+    <div><button type="submit" class="btn btn-outline-success">Register</button></div>
+    <div><a routerLink=""class="btn btn-outline-primary">log in</a></div>
+</div>
+</div>
+</div>
+</form>
+</body>
